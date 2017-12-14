@@ -105,9 +105,69 @@ class App extends Component {
                   <li><a id="VirtualBox" href="http://10.1.0.10/phpvirtualbox/" target="_blank">VirtualBox for Connector VM's</a></li>
               </ul>
           </LinkBlock>
-          <LinkBlock></LinkBlock>
-          <LinkBlock></LinkBlock>
-          <LinkBlock></LinkBlock>
+          <LinkBlock title="Boards Links">
+              <ul>
+                  <li><a href="https://xillio.atlassian.net/secure/RapidBoard.jspa?rapidView=23&useStoredSettings=true" target="_blank">COT Board</a></li>
+                  <li><a href="https://xillio.atlassian.net/secure/RapidBoard.jspa?rapidView=19&useStoredSettings=true" target="_blank">INT Board</a></li>
+                  <li><a href="https://xillio.atlassian.net/secure/RapidBoard.jspa?rapidView=17&view=detail" target="_blank">Kanban Board</a></li>
+                  <li><a href="https://xillio.atlassian.net/secure/RapidBoard.jspa?rapidView=16&useStoredSettings=true" target="_blank">Sprint Board</a></li>
+                  <li><a href="https://xillio.atlassian.net/secure/RapidBoard.jspa?rapidView=21&useStoredSettings=true" target="_blank">XSVR Board</a></li>
+              </ul>
+          </LinkBlock>
+          <LinkBlock title="Functional Review Checklist">
+              <ol>
+                  <li><input type="checkbox" />Pull request valid</li>
+                  <li><input type="checkbox" />Issue branch in sync with develop</li>
+                  <li><input type="checkbox" />Assign yourself to story in Jira</li>
+                  <li><input type="checkbox" />Story listed as 'In Progress' or 'In Review'?</li>
+                  <li><input type="checkbox" />Check story description and comments in Jira</li>
+                  <li><input type="checkbox" />Check with issuer for areas of concern</li>
+                  <li><input type="checkbox" />Run <span class="cursive">Project > Lifecycle > package</span> task for Maven on the Xill-platform branch without issues</li>
+                  <li><input type="checkbox" />Run the application. Does it start without issues?</li>
+                  <li><input type="checkbox" /><span class="bold">Run through the story requirements. Do all functional tests succeed?</span></li>
+                  <li><input type="checkbox" />If relevant: are the help files clear and complete with sample code?</li>
+                  <li><input type="checkbox" />If relevant: Documentation up-to-date (community site/Confluence/Course material) for next release?</li>
+                  <li><input type="checkbox" />Check <a href="https://xillio.atlassian.net/wiki/display/DEV/Definition+of+Done">The Definition of Done</a>. Is there anything that is not done yet?</li>
+                  <li><input type="checkbox" />Upload your report and test bots to JIRA.</li>
+              </ol>
+          </LinkBlock>
+          <LinkBlock title={"Research for automated testing for the server"}>
+              <ol>
+                  <li>Web Interface testing</li>
+                  <li><input type="checkbox" /><a href="https://cucumber.io/">Cucumber</a></li>
+              </ol>
+              <br />
+              <ol>
+                  <li>GUI testing - Open source</li>
+                  <li><input type="checkbox" /><a href="http://www.autohotkey.com/" target="_blank">AutoHotkey</a></li>
+                  <li><input type="checkbox" /><a href="http://docs.seleniumhq.org/" target="_blank">Selenium</a></li>
+                  <li><input type="checkbox" /><a href="http://sikuli.org" target="_blank">Sikuli</a></li>
+                  <li><input type="checkbox" /><a href="www.robotframework.org" target="_blank">Robot Framework</a></li>
+                  <li><input type="checkbox" /><a href="http://www.watir.com/" target="_blank">watir</a></li>
+                  <li><input type="checkbox" /><a href="http://dojotoolkit.org/" target="_blank">Dojo Toolkit</a></li>
+              </ol>
+              <br />
+              <ol>
+                  <li>GUI testing - Commercial</li>
+                  <li><input type="checkbox" /><a href="http://www.autoitscript.com/site/autoit/" target="_blank">AutoIT</a></li>
+                  <li><input type="checkbox" /><a href="www.testplant.com" target="_blank">EggPlant</a></li>
+                  <li><input type="checkbox" /><a href="http://www8.hp.com/us/en/software-solutions/" target="_blank">QTP</a></li>
+                  <li><input type="checkbox" /><a href="http://www-03.ibm.com/software/products/us/en/functional" target="_blank">Rational Functional Tester</a></li>
+                  <li><input type="checkbox" /><a href="www.infragistics.com" target="_blank">Infragistics</a></li>
+                  <li><input type="checkbox" /><a href="http://www.iopus.com/iMacros/" target="_blank">iMacros</a></li>
+                  <li><input type="checkbox" /><a href="http://www.microsoft.com/visualstudio/" target="_blank">CodedUI</a></li>
+                  <li><input type="checkbox" /><a href="http://www.microfocus.com/" target="_blank">Sikuli</a></li>
+              </ol>
+          </LinkBlock>
+              <LinkBlock title={"QA Links"}>
+                  <ul>
+                      <li><a href="http://www.quality-assurance-solutions.com/" target="_blank">Quality Assurance Solutions</a></li>
+                      <li><a href="http://adventuresinqa.com/" target="_blank">Adventures in QA</a></li>
+                      <li><a href="http://www.satisfice.com/blog/" target="_blank">James Bach's Blog</a></li>
+                      <li><a href="http://www.blogmetrics.org/Quality_Assurance" target="_blank">Top 50 QA Blogs</a></li>
+                      <li><a href="http://www.sqazone.net/" target="_blank">SQA zone</a></li>
+                  </ul>
+              </LinkBlock>
           </div>
       </div>
     );
