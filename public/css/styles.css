@@ -1,0 +1,157 @@
+@font-face {
+    font-family: GloberLight;
+    src: url('../fonts/Fontfabric - Glober Light.ttf');
+}
+@font-face {
+    font-family: GloberSemiBold;
+    src: url('../fonts/Fontfabric - Glober SemiBold.ttf');
+}
+@font-face {
+    font-family: GloberXBold;
+    src: url('../fonts/Fontfabric - Glober xBold.ttf');
+}
+
+h1, h2 {
+    font-family: GloberXBold, Arial, Helvetica, sans-serif;
+    color: #464646;
+}
+
+h1 {
+    padding: 10px 0 0 20px;
+}
+
+h2 {
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+body {
+    background: rgb(234, 234, 234);
+    font-family: GloberSemiBold;
+}
+
+ol li {
+    color: rgb(234, 234, 234);
+}
+
+a {
+    font-family: GloberSemiBold, Arial, Helvetica, sans-serif;
+    color: #dc042b;
+}
+
+.item {
+    background-color: #65cadc;
+    margin: 20px 20px 30px 20px;
+    padding: 20px 30px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.item.small {
+    width: 150px;
+}
+
+.item.medium {
+    width: 300px;
+}
+
+.item.large {
+    width: 500px;
+}
+
+div.link_panel {
+    background-color: #65cadc;
+}
+div.link_panel ul {
+    list-style: none;
+    list-style-type: none;
+    padding: 5px;
+}
+div.link_panel li {
+    padding: 5px 0;
+}
+div.link_panel li a {
+    text-decoration: none;
+    display: inline-block;
+}
+div.link_panel a:hover {
+    text-decoration: underline;
+}
+div.link_panel form {
+    margin: 10px 0 20px 0;
+}
+div.link_panel form input {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+div.link_panel label{
+    font-family: Glober, Arial, Helvetica, sans-serif;
+    color: #dc042b;
+    padding:0px;
+    display:block;
+    margin: 0 0 5px 0;
+}
+div.link_panel input[type=submit], .form-style-1 input[type=button]{
+    font-weight: bold;
+    background: #dc042b;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+div.link_panel input[type=submit]:hover, div.link_panel input[type=button]:hover{
+    font-weight: bold;
+    color: #FF9842;
+    background: #4691A4;
+    box-shadow: 10px 10px 5px #FF9842;
+    -moz-box-shadow: 10px 10px 5px #FF9842;
+    -webkit-box-shadow: 2px 2px 0px #FF9842;
+}
+div.checklist_panel {
+    background-color: #65cadc;
+    padding: 10px 20px;
+}
+div.checklist_panel li {
+    padding: 5px 0;
+}
+div.checklist_panel .cursive {
+    font-style: italic;
+}
+
+/* Icons for links */
+a#artifactory 	{ background-image: url(../images/testingTools/icon_artifactory.png); }
+a#bitbucket 	{ background-image: url(../images/testingTools/icon_bitbucket.png); }
+a#confluence 	{ background-image: url(../images/testingTools/icon_confluence.png); }
+a#jenkins 		{ background-image: url(../images/testingTools/icon_jenkins.png); }
+a#jira 			{ background-image: url(../images/testingTools/icon_jira.png); }
+a#office 		{ background-image: url(../images/testingTools/icon_office.png); }
+a#scrumwise 	{ background-image: url(../images/testingTools/icon_scrumwise.png); }
+a#sonar 		{ background-image: url(../images/testingTools/icon_sonar.png); }
+a#virtualbox 	{ background-image: url(../images/testingTools/icon_virtualbox.png); }
+
+a#alfresco		{ background-image: url(../images/contentSystems/icon_alfresco.png); }
+a#github		{ background-image: url(../images/contentSystems/icon_github.png); }
+a#sharepoint	{ background-image: url(../images/contentSystems/icon_sharepoint.png); }
+a#liferay		{ background-image: url(../images/contentSystems/icon_liferay.png); }
+a#aem			{ background-image: url(../images/contentSystems/icon_aem.png); }
+
+
+ul.system_links li a {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 25px;
+    line-height: 12px;
+}
+ul.system_links li a.normal {
+    padding: 0;
+}
