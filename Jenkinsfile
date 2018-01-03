@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'apt-get update'
-                sh 'apt-get install rsync'
+                sh 'apt-get install -y rsync'
             }
         }
 
