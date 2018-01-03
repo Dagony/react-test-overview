@@ -33,14 +33,9 @@ pipeline {
                 branch 'master'
             }
             steps {
-                publishHTML target: [
-                    allowMissing         : false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll              : true,
-                    reportDir            : 'build',
-                    reportFiles          : 'index.html',
-                    reportName           : 'React app'
-                ]
+                sshagent(['af33c7f8-32f7-456e-b5b6-f4e16f890eb4']) {
+                    sh 'rsync build/* dagony@chapp.io:reactApp --delete --recursive -e "ssh -p 7022"'
+                }
             }
         }
     }
