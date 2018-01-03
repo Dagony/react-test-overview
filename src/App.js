@@ -26,16 +26,6 @@ class App extends Component {
         this.setState();
     }
 
-    componentDidMount() {
-        let container = document.querySelector("#root");
-        let masonry = new window.Masonry(container, {
-            columnWidth: 50,
-            itemSelector: '.item'
-        });
-
-
-    }
-
   render() {
     return (
       <div className="App">
