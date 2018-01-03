@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App-title">Xillio Testing Overview</h1>
-          <div id="masonry">
+          <div>
               <LinkBlock size="medium" title="Functional reviewing">
                   <ul>
                       <li><a href="https://xillio.atlassian.net/projects/CTC/versions/12700/tab/release-report-all-issues" target="_blank">Status issues XIDE release 3.4.0</a></li>

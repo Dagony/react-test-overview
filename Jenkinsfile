@@ -4,6 +4,11 @@ pipeline {
             image 'node'
         }
     }
+
+    environment {
+        CI = true
+    }
+
     stages {
         stage('Install dependencies') {
             steps {
