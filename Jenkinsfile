@@ -13,6 +13,8 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
+                sh 'apt-get update'
+                sh 'apt-get install rsync'
             }
         }
 
