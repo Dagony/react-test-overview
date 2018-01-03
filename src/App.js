@@ -207,13 +207,14 @@ class App extends Component {
                         <br/>
                         <ol>
                             <li>GUI testing - Commercial</li>
-                            <li><input type="checkbox"/><a href="http://www.autoitscript.com/site/autoit/"
+                            <li>
+                                <input type="checkbox"/><a href="http://www.autoitscript.com/site/autoit/"
                                                            target="_blank" rel="noopener noreferrer">AutoIT</a></li>
                             <li><input type="checkbox"/><a href="www.testplant.com" target="_blank"
                                                            rel="noopener noreferrer">EggPlant</a></li>
                             <li><input type="checkbox"/><a href="http://www8.hp.com/us/en/software-solutions/"
                                                            target="_blank" rel="noopener noreferrer">QTP</a></li>
-                            <li><input type="checkbox"/><a`
+                            <li><input type="checkbox"/><a
                                 href="http://www-03.ibm.com/software/products/us/en/functional" target="_blank"
                                 rel="noopener noreferrer">Rational Functional Tester</a></li>
                             <li><input type="checkbox"/><a href="www.infragistics.com" target="_blank"
