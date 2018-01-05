@@ -15,6 +15,8 @@ pipeline {
                 sh 'npm install'
                 sh 'apt-get update'
                 sh 'apt-get install -y rsync'
+                sh 'npm install semantic-ui-react'
+                sh 'npm install semantic-ui-css'
             }
         }
 
