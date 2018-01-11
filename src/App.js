@@ -56,11 +56,13 @@ class App extends Component {
 
                 <LinkBlock title={"Test Systems - Virtual machines"} size={"medium"} className={"systemLinks"}>
                     <Link href={"http://192.168.0.144:8080/share"} text={"Alfresco"} id={"alfresco"}></Link>
-                        {/*<li><a id="github" href="https://github.com/XillioQA" target="_blank">GitHub</a></li>*/}
-                        {/*<li><a id="sharepoint" href="http://xilliolabs.sharepoint.com" target="_blank">Sharepoint</a></li>*/}
-                        {/*<li><a id="confluence" href="https://xillio.atlassian.net/wiki/spaces/TEST" target="_blank">Confluence</a></li>*/}
-                        {/*<li><a id="liferay" href="http://192.168.0.187:8080/" target="_blank">Liferay</a></li>*/}
-                        {/*<li><a id="aem" href="http://10.1.10.98:4502">AEM Test Environment</a> (<a class="normal" href="http://10.1.10.98:19239">Remote Desktop</a>) (<a class="normal" href="http://10.1.10.98:4502/crx/de/index.jsp">CRXDE Lite</a>)</li>*/}
+                    <Link href={"https://github.com/XillioQA"} text={"Github"} id={"github"}></Link>
+                    <Link href={"http://xilliolabs.sharepoint.com"} text={"Sharepoint"} id={"sharepoint"}></Link>
+                    <Link href={"https://xillio.atlassian.net/wiki/spaces/TEST"} text={"Confluence"} id={"confluence"}></Link>
+                    <Link href={"http://192.168.0.187:8080/"} text={"Liferay"} id={"liferay"}></Link>
+                    <Link href={"http://10.1.10.98:4502"} text={"AEM"} id={"aem"} RemoteDesktop={"http://10.1.10.98:19239"}></Link>
+
+                        {/*<li><a id="aem" href=>AEM Test Environment</a> (<a class="normal" href="http://10.1.10.98:19239">Remote Desktop</a>) (<a class="normal" href="http://10.1.10.98:4502/crx/de/index.jsp">CRXDE Lite</a>)</li>*/}
 
                 </LinkBlock>
                 </Card.Group>
@@ -104,13 +106,49 @@ class LinkBlock extends React.Component {
 }
 
 class Link extends React.Component {
-    render() {
-        return (
-            <List.Item>
-                <a {...this.props} target="noopener noreferrer">{this.props.text}</a>
-            </List.Item>
-        )
+
+    constructor(props) {
+        super(props);
     }
+
+    render() {
+        let imgSrc = "";
+
+        switch(this.props.id) {
+            case 'alfresco':
+                imgSrc="images/contentSystems/icon_alfresco.png";
+                break;
+            case 'github':
+                imgSrc="images/contentSystems/icon_github.png";
+                break;
+            case 'sharepoint':
+                imgSrc="images/contentSystems/icon_sharepoint.png";
+                break;
+            case 'confluence':
+                imgSrc="images/testingTools/icon_confluence.png";
+                break;
+            case 'liferay':
+                imgSrc="images/contentSystems/icon_liferay.png";
+                break;
+            case 'aem':
+                imgSrc="images/contentSystems/icon_aem.png";
+                break;
+            default :
+                break;
+
+        }
+        return(
+            <List.Item>
+                <a {...this.props} target="noopener noreferrer">
+                    {imgSrc !== "" ? <img class="ui avatar image" alt={this.props.id} src={imgSrc} /> : "" }
+                    {this.props.text}
+                </a>
+                {this.props.RemoteDesktop ? <a href={this.props.RemoteDesktop} target="noopener noreferer"> (Remote Desktop)</a> : null}
+            </List.Item>
+        );
+
+    }
+
 }
 
 export default App;
