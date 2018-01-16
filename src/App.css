@@ -1,59 +1,65 @@
-
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 body {
-  background: #F2F2F2;
+    background: #F2F2F2;
 }
 
 .container {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.item {
+    margin: auto auto 10px auto !important;
+    padding: 5px;
 }
 
 /*.ui.card {*/
-  /*background-color: #65cadc !important;*/
-  /*height: 100%;*/
+/*background-color: #65cadc !important;*/
+/*height: 100%;*/
 /*}*/
 /*.header {*/
-  /*font-family: GloberXBold, Arial, Helvetica, sans-serif !important;*/
-  /*color: #464646 !important;*/
+/*font-family: GloberXBold, Arial, Helvetica, sans-serif !important;*/
+/*color: #464646 !important;*/
 /*}*/
 
+.ui.card.small {
+    width: 15% !important;
+}
 
-/*.ui.card.small {*/
-  /*width: 150px;*/
-/*}*/
+.ui.card.medium {
+    width: 30% !important;
+}
 
-/*.ui.card.medium {*/
-  /*width: 300px;*/
-/*}*/
-
-/*.ui.card.large {*/
-  /*width: 500px;*/
-/*}*/
+.ui.card.large {
+    width: 50% !important;
+}
 
 /*a {*/
-  /*font-family: GloberSemiBold, Arial, Helvetica, sans-serif;*/
-  /*color: #dc042b;*/
+/*font-family: GloberSemiBold, Arial, Helvetica, sans-serif;*/
+/*color: #dc042b;*/
 /*}*/
 
-
-
 /* Icons for links */
-a#artifactory 	{ background-image: url(images/testingTools/icon_artifactory.png); background-repeat: no-repeat;}
-a#bitbucket 	{ background-image: url(images/testingTools/icon_bitbucket.png); }
-a#confluence 	{ background-image: url(images/testingTools/icon_confluence.png); }
-a#jenkins 		{ background-image: url(images/testingTools/icon_jenkins.png); }
-a#jira 			{ background-image: url(images/testingTools/icon_jira.png); }
-a#office 		{ background-image: url(images/testingTools/icon_office.png); }
-a#scrumwise 	{ background-image: url(images/testingTools/icon_scrumwise.png); }
-a#sonar 		{ background-image: url(images/testingTools/icon_sonar.png); }
-a#virtualbox 	{ background-image: url(images/testingTools/icon_virtualbox.png); }
+/*a#artifactory 	{ background-image: url(images/testingTools/icon_artifactory.png); }*/
+/*a#bitbucket 	{ background-image: url(images/testingTools/icon_bitbucket.png); }*/
+/*a#confluence 	{ background-image: url(images/testingTools/icon_confluence.png); }*/
+/*a#jenkins 		{ background-image: url(images/testingTools/icon_jenkins.png); }*/
+/*a#jira 			{ background-image: url(images/testingTools/icon_jira.png); }*/
+/*a#office 		{ background-image: url(images/testingTools/icon_office.png); }*/
+/*a#scrumwise 	{ background-image: url(images/testingTools/icon_scrumwise.png); }*/
+/*a#sonar 		{ background-image: url(images/testingTools/icon_sonar.png); }*/
+/*a#virtualbox 	{ background-image: url(images/testingTools/icon_virtualbox.png); }*/
 
-a#alfresco		{ background-image: url(images/contentSystems/icon_alfresco.png); background-repeat: no-repeat; }
-a#github		{ background-image: url(images/contentSystems/icon_github.png); }
-a#sharepoint	{ background-image: url(images/contentSystems/icon_sharepoint.png); }
-a#liferay		{ background-image: url(images/contentSystems/icon_liferay.png); }
-a#aem			{ background-image: url(images/contentSystems/icon_aem.png); }
+/*a#alfresco		{ background-image: url(images/contentSystems/icon_alfresco.png); }*/
+/*a#github		{ background-image: url(images/contentSystems/icon_github.png); }*/
+/*a#sharepoint	{ background-image: url(images/contentSystems/icon_sharepoint.png); }*/
+/*a#liferay		{ background-image: url(images/contentSystems/icon_liferay.png); }*/
+/*a#aem			{ background-image: url(images/contentSystems/icon_aem.png); }*/
