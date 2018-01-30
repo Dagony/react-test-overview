@@ -49,19 +49,19 @@ class App extends Component {
                             title = {'Functional reviewing'} >
                                 <Link
                             href = {"https://xillio.atlassian.net/projects/CTC/versions/12700/tab/release-report-all-issues"}
-                            text = {"test"} > < /Link>
+                            text = {"test"} > </Link>
                                 <Link
                             href = {"https://xillio.atlassian.net/wiki/display/DEV/Status+overview+Xill+Server"}
-                            text = {"XSVR Testing Overview"} > < /Link>
+                            text = {"XSVR Testing Overview"} > </Link>
                                 <Link
                             href = {"https://xillio.atlassian.net/wiki/display/DEV/3+-+Functional+Review+Checklist"}
-                            text = {"Functional review checklist"} > < /Link>
+                            text = {"Functional review checklist"} > </Link>
                                 <Link
                             href = {"https://bitbucket.org/dashboard/pullrequests?section=teams"}
-                            text = {"Pull requests"} > < /Link>
+                            text = {"Pull requests"} > </Link>
                                 <Link
                             href = {"https://xillio.atlassian.net/wiki/display/PROD/Xill+Project+Convention"}
-                            text = {"Consultants Xill Project Convention"} > < /Link>
+                            text = {"Consultants Xill Project Convention"} > </Link>
                         </LinkBlock>
             <LinkBlock
         title = {"Functional test reports"} >
@@ -193,7 +193,7 @@ class EngineSandboxStatus extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://sandbox.zxill.io/system/ping')
+        fetch('https://sandbox.xill.io/system/ping')
             .then( response => {
                 console.log(response);
                 this.setState({sandboxResponse: {
@@ -220,19 +220,19 @@ class EngineSandboxStatus extends React.Component {
     }
     render() {
 
-        let sandboxDisplay = "";
+        var sandboxDisplay = "";
 
         if(this.state.sandboxResponse.status === 200 ) {
-            sandboxDisplay = <div style={{"backgroundColor": "green"}}>{this.state.sandboxResponse._url}</div>;
+            sandboxDisplay =<div><i className={"check square icon green"}></i>{this.state.sandboxResponse._url}</div>;
         } else {
-            sandboxDisplay = <div style={{"backgroundColor" : "red"}}>{this.state.sandboxResponse._url}</div>;
+            sandboxDisplay =<div><i className={"minus square icon red"}></i>{this.state.sandboxResponse._url}</div>;
         }
 
         return(
             <Card className={"small"}>
                 <Card.Content>
                     <Card.Header>
-                        <Header>{'Sandbox Status'}</Header>
+                        <Header>{"Sandbox Status"}</Header>
                     </Card.Header>
                 </Card.Content>
                 <Card.Content>
