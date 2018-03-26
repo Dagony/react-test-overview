@@ -197,60 +197,8 @@ class EngineSandboxStatus extends React.Component {
     }
 
     componentDidMount() {
-        // fetch('https://sandbox.xill.io/v2/system/ping', {
-        //         method: 'GET'
-        //     }
-        // )
-        //     .then( response => {
-        //         response.json();
-        //         console.log(response);
-        //         this.setState({sandboxResponse: {
-        //             "_url" : response.url,
-        //             "status" : response.status,
-        //             "ok" : response.ok
-        //         }});
-        //     })
-        // .catch(error => {
-        //     console.error(error.message);
-        //
-        //     if (error.message.indexOf('NetworkError when attempting to fetch resource.') !== -1) {
-        //         this.setState({
-        //             sandboxResponse: {
-        //                 "_url" : 'https://sandbox.xill.io/v2/system/ping',
-        //                 "status" : 404,
-        //                 "ok" : `NOK`
-        //             }
-        //         });
-        //     }
-        //
-        // });
-
-        fetch('https://sandbox.xill.io/v2/system/version',
-            {
-                method: 'GET',
-
-            }
-            )
-            .then(response => {
-                response.json().then(json => {
-                    this.setState({
-                        sandboxVersionResponse: {
-                            "_url": response.url,
-                            "status": response.status,
-                            "version": json.softwareVersion
-                        }
-                    });
-                })
-            })
-            .catch(error => {
-                this.setState({
-                sandboxVersionResponse: {
-                    "_url": "https://sandbox.xill.io/v2/system/version",
-                    "status": "404",
-                    "ok": "NOK"
-
-                }});
-            });
+        this.fetchSandboxStatus();
+        setInterval(() => this.fetchSandboxStatus(), 5000);
     }
 
     render() {
@@ -276,7 +224,38 @@ class EngineSandboxStatus extends React.Component {
             </Card>
         );
     }
+
+    fetchSandboxStatus() {
+        fetch('https://sandbox.xill.io/v2/system/version',
+            {
+                method: 'GET',
+
+            }
+        )
+        .then(response => {
+            response.json()
+                .then(json => {
+                    this.setState({
+                    sandboxVersionResponse: {
+                        "_url": response.url,
+                        "status": response.status,
+                        "version": json.softwareVersion
+                    }
+                });
+            })
+        })
+        .catch(error => {
+                this.setState({
+                sandboxVersionResponse: {
+                    "_url": "https://sandbox.xill.io/v2/system/version",
+                    "status": "404",
+                    "ok": "NOK"
+
+                }});
+        });
+    }
 }
+
 
 
 export default App;
