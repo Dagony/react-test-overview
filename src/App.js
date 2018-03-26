@@ -189,54 +189,89 @@ class ConnectorsShower extends React.Component {
 class EngineSandboxStatus extends React.Component {
     constructor() {
         super();
-        this.state={sandboxResponse:{}, sandboxDisplay:{}};
+        this.state={
+            sandboxResponse:{},
+            sandboxDisplay:{},
+            sandboxVersionResponse:{}
+        };
     }
 
     componentDidMount() {
-        fetch('https://sandbox.xill.io/system/ping')
-            .then( response => {
-                console.log(response);
-                this.setState({sandboxResponse: {
-                    "_url" : response.url,
-                    "status" : response.status,
-                    "ok" : response.ok
-                }});
-                return true;
-            })
-        .catch(error => {
-            console.error(error.message);
+        // fetch('https://sandbox.xill.io/v2/system/ping', {
+        //         method: 'GET'
+        //     }
+        // )
+        //     .then( response => {
+        //         response.json();
+        //         console.log(response);
+        //         this.setState({sandboxResponse: {
+        //             "_url" : response.url,
+        //             "status" : response.status,
+        //             "ok" : response.ok
+        //         }});
+        //     })
+        // .catch(error => {
+        //     console.error(error.message);
+        //
+        //     if (error.message.indexOf('NetworkError when attempting to fetch resource.') !== -1) {
+        //         this.setState({
+        //             sandboxResponse: {
+        //                 "_url" : 'https://sandbox.xill.io/v2/system/ping',
+        //                 "status" : 404,
+        //                 "ok" : `NOK`
+        //             }
+        //         });
+        //     }
+        //
+        // });
 
-            if (error.message.indexOf('NetworkError when attempting to fetch resource.') !== -1) {
-                this.setState({sandboxResponse: {
-                        "_url" : 'https://sandbox.zxill.io/system/ping',
-                        "status" : 404,
-                        "ok" : `NOK`
-                    }})
+        fetch('https://sandbox.xill.io/v2/system/version',
+            {
+                method: 'GET',
+
             }
+            )
+            .then(response => {
+                response.json().then(json => {
+                    this.setState({
+                        sandboxVersionResponse: {
+                            "_url": response.url,
+                            "status": response.status,
+                            "version": json.softwareVersion
+                        }
+                    });
+                })
+            })
+            .catch(error => {
+                this.setState({
+                sandboxVersionResponse: {
+                    "_url": "https://sandbox.xill.io/v2/system/version",
+                    "status": "404",
+                    "ok": "NOK"
 
-        })
-            // .then(_status=>this.setState({sandboxStatus: _status}))
-        // setTimeout(() => console.log(this.state.sandboxStatus), 500);
+                }});
+            });
     }
+
     render() {
+        let {version,status} = {...this.state.sandboxVersionResponse};
+        let versionDisplay = "";
 
-        var sandboxDisplay = "";
-
-        if(this.state.sandboxResponse.status === 200 ) {
-            sandboxDisplay =<div><i className={"check square icon green"}></i>{this.state.sandboxResponse._url}</div>;
+        if (status === 200) {
+            versionDisplay =<div><i className={"check square icon green"}></i>{version}</div>;
         } else {
-            sandboxDisplay =<div><i className={"minus square icon red"}></i>{this.state.sandboxResponse._url}</div>;
+            versionDisplay =<div><i className={"red exclamation triangle icon"}></i>No version could be retrieved. Server alive?</div>
         }
 
         return(
-            <Card className={"small"}>
+            <Card className="small" style={{"height":"100%"}}>
                 <Card.Content>
                     <Card.Header>
                         <Header>{"Sandbox Status"}</Header>
                     </Card.Header>
                 </Card.Content>
                 <Card.Content>
-                    {sandboxDisplay}
+                    {versionDisplay}
                 </Card.Content>
             </Card>
         );
